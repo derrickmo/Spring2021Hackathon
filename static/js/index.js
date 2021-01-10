@@ -132,3 +132,8 @@ function updateSlider(type1) {
         let sliderDiv = document.getElementById("type3");
         sliderDiv.innerHTML = type3;
     }
+
+function submitForms(){
+     document.getElementById("selection").submit();
+    document.getElementById("type-form").submit();
+}

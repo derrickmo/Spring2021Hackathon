@@ -26,21 +26,7 @@
             <a href="#" class="img logo rounded-circle mb-5" style="background-image: url(static/css/Images/logo.jpg);"></a>
             <ul class="list-unstyled components mb-5">
                 <li class="active">
-                    <form id="type-form" method = 'post' action="/type">
-                                            <div>
-                                                <input id="slide2" type="range" min="1" max="100" step="1" value="50" onchange="updateSlider(this.value)" name="type1">
-                                                Value: <span id="type1"></span>
-                                            </div>
-                                            <div>
-                                                <input id="slide" type="range" min="1" max="100" step="1" value="50" onchange="updateSlider1(this.value)" name="type2">
-                                                Value: <span id="type2"></span>
-                                            </div>
-                                            <div>
-                                                <input id="slide3" type="range"  min="1" max="100" step="1" value="50" onchange="updateSlider2(this.value)" name="type3">
-                                                Value: <span id="type3"></span>
-                                            </div>
-                                            <button type="submit" class="btn btn-outline-primary" >OK</button>
-                                        </form>
+
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Search</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <!-- <form> -->
@@ -48,6 +34,20 @@
                             <fieldset>
                                 <legend>Find your home</legend>
                             </fieldset>
+
+                            <div>
+                                <input id="slide2" type="range" min="1" max="100" step="1" value="50" oninput="updateSlider(this.value)" name="type1">
+                                Value: <span id="type1"></span>
+                            </div>
+                            <div>
+                                <input id="slide" type="range" min="1" max="100" step="1" value="50" oninput="updateSlider1(this.value)" name="type2">
+                                Value: <span id="type2"></span>
+                            </div>
+                            <div>
+                                <input id="slide3" type="range"  min="1" max="100" step="1" value="50" oninput="updateSlider2(this.value)" name="type3">
+                                Value: <span id="type3"></span>
+                            </div>
+                            {#                                                    <button type="submit" class="btn btn-outline-primary" >OK</button>#}
 
                             <div class="inner-form">
                                 <div class="left">
@@ -72,7 +72,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button  class="btn btn-outline-primary">SEARCH</button>
+                                <button class="btn-search" type="submit"> SEARCH</button>
                             </div>
                         </form>
                     </ul>

@@ -49,6 +49,22 @@
     }
 
 
+
+    <form id="type-form" >
+        <div>
+            <input id="slide2" type="range" min="1" max="100" step="1" value="50" onchange="updateSlider(this.value)" name="type1">
+                Value: <span id="type1"></span>
+        </div>
+        <div>
+            <input id="slide" type="range" min="1" max="100" step="1" value="50" onchange="updateSlider1(this.value)" name="type2">
+                Value: <span id="type2"></span>
+        </div>
+        <div>
+            <input id="slide3" type="range"  min="1" max="100" step="1" value="50" onchange="updateSlider2(this.value)" name="type3">
+                Value: <span id="type3"></span>
+        </div>
+        {#                                            <button type="submit" class="btn btn-outline-primary" >OK</button>#}
+    </form>
 </script>
 </body>
 </html>
