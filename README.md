@@ -14,6 +14,20 @@ Yunyang Li - Devpost ID – liyy@seas.upenn.edu – https://github.com/Clarklee2
 Di Hu - Devpost ID – diihuu@seas.upenn.edu – https://github.com/diihuu
 Tzu-Hao Mo - Devpost ID: moderrick – moderr@seas.upenn.edu – https://github.com/moderrick
 
+Requirements:
+certifi==2020.12.5
+chardet==4.0.0
+click==7.1.2
+Flask==1.1.2
+idna==2.10
+itsdangerous==1.1.0
+Jinja2==2.11.2
+MarkupSafe==1.1.1
+requests==2.25.1
+urllib3==1.26.2
+Werkzeug==1.0.1
+
+
 Installation and Deployment
 Step 1: Download the file and put all files in the same directory
 Step 2: Install pip and please consult "requirements.txt" for details
