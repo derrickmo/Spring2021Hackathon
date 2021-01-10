@@ -1,13 +1,13 @@
-Overview
 Project summary
 Please provide a short (one paragraph) summary of your project. Consider this your elevator pitch.
 
 Include the link to your Devpost project page here: Devpost
 
 Authors
-Name - Devpost ID – Penn email – GitHub
-Name - Devpost ID – Penn email – GitHub
-Name - Devpost ID – Penn email – GitHub
+Yunyang Li - Devpost ID – liyy@seas.upenn.edu – https://github.com/Clarklee2009
+Di Hu - Devpost ID – diihuu@seas.upenn.edu – https://github.com/diihuu
+Tzu-Hao Mo - Devpost ID – moderr@seas.upenn.edu – https://github.com/moderrick
+
 Usage
 This section walks a prospective user through the process of installing and running the project on their local machine. The more detailed and the more accurate, the better. User-friendly instructions will entice prospective users (including judges) to engage more deeply with your project, which could improve your hackathon score.
 
