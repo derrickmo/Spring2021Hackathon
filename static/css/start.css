@@ -4,8 +4,9 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-body {
 
+
+body {
   margin: 0;
   padding: 0;
 }
@@ -28,9 +29,9 @@ body {
   background-color: #fff;
   box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
   animation: arrow 700ms linear infinite;
-  -webkit-animation: 1s linear 0s infinite alternate move_eye;
+  -webkit-animation: 1s linear 0s infinite alternate move_Arrow;
 }
-@-webkit-keyframes move_eye { from { margin-left: 25%; } to { margin-left: 50%; }  }
+@-webkit-keyframes move_Arrow { from { margin-left: 25%; } to { margin-left: 50%; }  }
 
 .arrow::after, .arrow::before {
   content: '';
@@ -59,18 +60,22 @@ body {
     z-index: 1;
     position: relative;
     padding-bottom: 25vh;
+
+    /*opacity: 0.1;*/
   }
 
   #landing-header h1 {
     font-family: 'Lobster', cursive;
     font-size:4em;
     color: #fff;
+    background-color:rgba(0, 0, 0, 0.2);
   }
   #landing-header > a {
     font-family: 'Lobster', cursive;
     font-size:4em;
     color: #1c7430;
     text-decoration: none;
+    background-color:rgba(0, 0, 0, 0.2);
   }
 
   .slideshow {
