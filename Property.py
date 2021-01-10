@@ -22,7 +22,9 @@ class List:
     def __init__(self, input, lat, lon, weight):
         metaTemp = Meta(input['meta'])
         self.meta.append(metaTemp)
-
+        self.listProperty = []
+        self.overallScoreList = []
+        
         # This loop adds property object to the listProperty array
         for i in range(len(input['properties'])):
             proTemp = Property(input['properties'][i], lat, lon)
@@ -57,9 +59,10 @@ class List:
                 (self.listProperty[i].usabilityScore - self.usabilityScoreMin) / (
                             self.usabilityScoreMax - self.usabilityScoreMin) * self.maxScore) * (
                                                               (self.maxScore - self.minScore) / self.maxScore)
-            self.listProperty[i].overallScore = self.minScore + abs(
+           
+            self.listProperty[i].overallScore = abs(
                 self.listProperty[i].priceScore * weight[0] + self.listProperty[i].distanceScore * weight[1] +
-                self.listProperty[i].usabilityScore * weight[2]) * ((self.maxScore - self.minScore) / self.maxScore)
+                self.listProperty[i].usabilityScore * weight[2])
             self.overallScoreList.append(self.listProperty[i].overallScore)
 
         # This equation is equivalent to Argsort using numpy package
@@ -78,7 +81,8 @@ class List:
     # Get house information to be displayed {id: [location, score1:price, score2:dis, score3:use， score4:overall]}
     def getInfo(self):
         answer = defaultdict(list)
-        for i in range(len(self.listProperty)):
+        l = len(self.listProperty)
+        for i in range(l):
             id = self.listProperty[self.overallScoreSort[i]].propertyId
             location = []
             if (isinstance(self.listProperty[self.overallScoreSort[i]].addressLat, float) and isinstance(self.listProperty[self.overallScoreSort[i]].addressLon,
@@ -255,38 +259,6 @@ class Property:
     def calculateOverallScore(self, weight):
         return self.priceScore * weight[0] + self.distanceScore * weight[1] + self.usabilityScore * weight[2]
 
-    # def toString(self):
-    #     print()
-    #     print("Property ID: " +  str(self.propertyId))
-    #     print("Listing ID: " +  str(self.listingId))
-    #     print("Web URL: " +  str(self.webUrl))                              #
-    #     print("Property Type: " +  str(self.propertyType))                  #
-    #     print("Property Sub-type: " +  str(self.propertySubType))           #
-    #     print("Tour URL: " +  str(self.tour))
-    #     print("Address Line: " +  str(self.addressLine))                    #
-    #     print("City: " +  str(self.addressCity))                            #
-    #     print("Postal Code: " +  str(self.addressPostal))                   #
-    #     print("State: " +  str(self.addressState))                          #
-    #     print("County: " +  str(self.addressCounty))
-    #     print("Fips: " +  str(self.addressFips))
-    #     print("Latitude: " +  str(self.addressLat))                         #
-    #     print("Longitude: " +  str(self.addressLon))                        #
-    #     print("Neighborhood: " +  str(self.addressNeighborhood))
-    #     print("Status: " +  str(self.propertyStatus))
-    #     print("Price: " +  str(self.price))
-    #     print("No. of Full Baths: " +  str(self.bathsFull))
-    #     print("No. of Baths: " +  str(self.baths))
-    #     print("No. of Beds: " +  str(self.beds))
-    #     print("Building Size: " +  str(self.buildingSize))
-    #     print("Building Size Unit: " +  str(self.buildingSizeUnit))
-    #     print("Lot Size: " +  str(self.lotSize))
-    #     print("Lot Size Unit: " +  str(self.lotSizeUnit))
-    #     print("Last Update: " +  str(self.lastUpdate))
-    #     print("No. of Photos: " +  str(self.photoCount))
-    #     print("Building price per sqft: " + str(self.pricePerSqftBuilding))
-    #     print("Price Score: " + str(self.PriceScore))
-    #     print("Distance Score: " + str(self.distance))
-    #     print("usability Score: " + str(self.usabilityScore))
 
 
 def APIGenerator(city, state, ageMin=0, sqftMax=10000, bedsMin=0, priceMin=0, postalCode="", radius=100, priceMax=10000000, sqftMin=0, ageMax=100):
@@ -302,8 +274,8 @@ def APIGenerator(city, state, ageMin=0, sqftMax=10000, bedsMin=0, priceMin=0, po
     priceMaxString = "&price_max=" + str(priceMax) if isinstance(priceMax, int) else ""
     sqftMinString = "&sqft_min=" + str(sqftMin) if isinstance(sqftMin, int) else ""
     ageMax = "&age_max=" + str(ageMax) if isinstance(ageMax, int) else ""
-
-    requestString = "/properties/v2/list-for-sale?city=" + city + "&limit=5&offset=0&state_code=" + state + "&sort=relevance" + ageMinString + sqftMaxString + bedsMinString + priceMinString + postalCodeString + radiusString + priceMaxString + sqftMinString + ageMax
+    NUMBER_OF_HOUSE= 10
+    requestString = "/properties/v2/list-for-sale?city=" + city + "&limit=" + str(NUMBER_OF_HOUSE) + "&offset=0&state_code=" + state + "&sort=relevance" + ageMinString + sqftMaxString + bedsMinString + priceMinString + postalCodeString + radiusString + priceMaxString + sqftMinString + ageMax
     print(requestString)
 
     conn = http.client.HTTPSConnection("realtor.p.rapidapi.com")
@@ -330,7 +302,7 @@ def runner(city, state, lat, lng, w1, w2, w3):
     w2 = float(w2)
     w3 = float(w3)
     total = w1 + w2 + w3
-    weight = [w2 / total, w2 / total, w3 / total]
+    weight = [w1 / total, w2 / total, w3 / total]
 
     # Back-up option - This block reads from the source document
     # with open('source.txt') as input: # Pulling Json format txts from txt file for testing purposes

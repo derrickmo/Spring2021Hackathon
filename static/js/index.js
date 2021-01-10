@@ -4,7 +4,7 @@ function initMap() {
   autoComplete();
   map = new google.maps.Map(
       document.getElementById("map"), {
-        zoom: 12,
+        zoom: 11,
         center: { lat: 37.7839, lng: -122.444 },
         mapTypeId: "roadmap",
   });
@@ -78,11 +78,11 @@ function getPoints() {
             title: window.response[x].toString(),
     });
         marker.addListener("click", () => {
-          map.setZoom(20);
+          map.setZoom(13);
           map.setCenter(marker.getPosition());
         });
         map.setCenter({lat: (h_limit_min + h_limit_max)* 0.5, lng: (v_limit_min + v_limit_max) * 0.5});
-        heappoints.push({location: new google.maps.LatLng(ltt,lgt), weight: window.response[x]});
+        heappoints.push({location: new google.maps.LatLng(ltt,lgt), weight: (10 * window.response[x] - 80)});
     }
 
 

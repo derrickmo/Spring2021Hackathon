@@ -28,15 +28,25 @@ def index():
 
 
 def getLocation(addr):
-    URL = "http://maps.googleapis.com/maps/api/geocode/json"
-    PARAMS = {'address': addr}
-    r = requests.get(url=URL, params=PARAMS)
-    data = r.json()
-    latitude = data['results'][0]['geometry']['location']['lat']
-    longitude = data['results'][0]['geometry']['location']['lng']
-    print(latitude, longitude)
+    URL = "https://maps.googleapis.com/maps/api/geocode/json?address="
+    if addr:
+        addr = addr.split(" ")
+        for seg in addr:
+            URL += seg
+            URL += "+"
+        URL = URL[:-1]
+        URL += "&"
 
-    return [latitude, longitude]
+        key = "key=" + "AIzaSyAtSafk_fwKKGG2eKGIt1W_d27Any8JzrQ"
+        URL += key
+        PARAMS = {'address': addr}
+        r = requests.get(url=URL, params=PARAMS)
+        data = r.json()
+        latitude = data['results'][0]['geometry']['location']['lat']
+        longitude = data['results'][0]['geometry']['location']['lng']
+        return (latitude, longitude)
+
+    return [35.95, 75.16]
 
 
 @app.route('/handle_data', methods=['POST'])
