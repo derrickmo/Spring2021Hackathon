@@ -10,6 +10,8 @@ function set_state(s)
   
   const state = states[s].split("|");
   var toAdd = document.getElementById("city");
+  $(toAdd).empty();
+
   var l = state.length;
   for (var i = 0; i < l; i++){
   	var option = document.createElement("option");
