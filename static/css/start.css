@@ -4,17 +4,71 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-    #landing-header {
-      padding-top: 40vh;
-      text-align: center;
-      /* Make sure it's in front of the background images */
-      z-index: 1;
-      position: relative;
-      padding-bottom: 25vh;
+body {
+
+  margin: 0;
+  padding: 0;
+}
+
+.icon {
+  position: absolute;
+  top: 75%;
+  left: 45%;
+  transform: translate(-50%,-50%);
+  width: 80px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.arrow {
+  position: absolute;
+  top: 25px;
+  width: 90%;
+  height: 10px;
+  background-color: #fff;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+  animation: arrow 700ms linear infinite;
+}
+
+.arrow::after, .arrow::before {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 10px;
+  right: -8px;
+  background-color: #fff;
+}
+
+.arrow::after {
+  top: -12px;
+  transform: rotate(45deg);
+}
+
+.arrow::before {
+  top: 12px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+  transform: rotate(-45deg);
+}
+
+  #landing-header {
+    padding-top: 40vh;
+    text-align: center;
+    /* Make sure it's in front of the background images */
+    z-index: 1;
+    position: relative;
+    padding-bottom: 25vh;
   }
 
   #landing-header h1 {
+    font-family: 'Lobster', cursive;
+    font-size:4em;
     color: #fff;
+  }
+  #landing-header > a {
+    font-family: 'Lobster', cursive;
+    font-size:4em;
+    color: #1c7430;
+    text-decoration: none;
   }
 
   .slideshow {
@@ -41,28 +95,26 @@
     opacity: 0;
     z-index: 0;
     /* last for 50s, keep linear timing, loop infinite times */
-    animation: imageAnimation 40s linear infinite;
+    animation: imageAnimation 20s linear infinite;
   }
 
   .slideshow li:nth-child(1) {
-    background-image: url(https://i.ibb.co/xJLPNNz/fullsizeoutput-1545.jpg) /*https://adobe.ly/2Jr5SCD*/
+    background-image: url('Images/house1.jpg')
   }
   .slideshow li:nth-child(2) {
-    background-image: url(https://i.ibb.co/JRQB7M0/DSC-0237.jpg); /*https://adobe.ly/2JcHyny*/
-    animation-delay: 10s;
+    background-image: url('Images/house2.jpg');
+    animation-delay: 5s;
   }
   .slideshow li:nth-child(3) {
-    background-image: url(https://i.ibb.co/v3m1QMY/DSC-0323.jpg); /*https://adobe.ly/2TQqs35*/
-    animation-delay: 20s;
+    background-image: url('Images/house7.jpg');
+    animation-delay: 10s;
   }
   .slideshow li:nth-child(4) {
-    background-image: url(https://i.ibb.co/NmZjxn9/fullsizeoutput-141b.jpg); /*https://adobe.ly/2JdlJo6*/
-    animation-delay: 30s;
+    background-image: url('Images/house8.jpg');
+    animation-delay: 15s;
   }
-  /* More pictures:
-        https://adobe.ly/2TUfkCx
-        https://adobe.ly/2JbS2nf
- */
+
+
 
   @keyframes imageAnimation {
     0% {
