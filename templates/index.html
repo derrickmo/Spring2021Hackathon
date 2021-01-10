@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heatmaps</title>
+    <link
+            rel="stylesheet" type="text/css" href="{{ url_for('static',
+            filename='css/index.css') }}"/ >
+    <script type="text/javascript" src="{{
+            url_for('static', filename='js/index.js') }}"></script>
+    <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1xB_eFmycUaYUEMAe6YSwElP0QvxOxKw&callback=initMap&libraries=visualization,geometry,places&v=weekly"
+            defer></script>
+    <script type='text/javascript' >
+        window.response;
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+<div class="wrapper d-flex align-items-stretch">
+    <nav id="sidebar">
+        <div class="p-4 pt-5">
+            <a href="#" class="img logo rounded-circle mb-5" style="background-image: url(static/css/Images/logo.jpg);"></a>
+            <ul class="list-unstyled components mb-5">
+                <li class="active">
+                    <form id="type-form" method = 'post' action="/type">
+                                            <div>
+                                                <input id="slide2" type="range" min="1" max="100" step="1" value="50" onchange="updateSlider(this.value)" name="type1">
+                                                Value: <span id="type1"></span>
+                                            </div>
+                                            <div>
+                                                <input id="slide" type="range" min="1" max="100" step="1" value="50" onchange="updateSlider1(this.value)" name="type2">
+                                                Value: <span id="type2"></span>
+                                            </div>
+                                            <div>
+                                                <input id="slide3" type="range"  min="1" max="100" step="1" value="50" onchange="updateSlider2(this.value)" name="type3">
+                                                Value: <span id="type3"></span>
+                                            </div>
+                                            <button type="submit" class="btn btn-outline-primary" >OK</button>
+                                        </form>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Search</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <!-- <form> -->
+                        <form id="selection" action="{{ url_for('handle_data') }}" method="post">
+                            <fieldset>
+                                <legend>Find your home</legend>
+                            </fieldset>
+
+                            <div class="inner-form">
+                                <div class="left">
+                                    <div class="input-wrap first">
+
+                                        <div class="input-field first">
+                                            <label>Place</label>
+                                            <input id="input" type="text" name="location" placeholder="city or zip" />
+                                        </div>
+                                    </div>
+                                    <div class="input-wrap second">
+                                        <div class="input-field second">
+                                            <label>WHERE</label>
+                                            <div class="input-select">
+                                                <select data-trigger="" name="choices-single-defaul">
+                                                    <option placeholder="">1 adult</option>
+                                                    <option>2 adults</option>
+                                                    <option>3 adults</option>
+                                                    <option>4 adults</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button  class="btn btn-outline-primary">SEARCH</button>
+                            </div>
+                        </form>
+                    </ul>
+                </li>
+                <li>
+                    {#                            <a href="/start">About</a>#}
+                </li>
+                <li>
+                    <p id="demo"></p>
+                </li>
+
+            </ul>
+            <div class="footer">
+                <p>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;<script>document.write(new Date().getFullYear());</script>  <i class="icon-heart" aria-hidden="true"></i> <a href="https://colorlib.com" target="_blank"></a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Content  -->
+    <div id="content" class="p-4 p-md-5">
+        <div id="floating-panel">
+            <button onclick="toggleHeatmap()">Toggle Heatmap</button>
+            <button onclick="changeGradient()">Change gradient</button>
+            <button onclick="changeRadius()">Change radius</button>
+            <button onclick="changeOpacity()">Change opacity</button>
+        </div>
+        <div id="map"></div>
+    </div>
+</div>
+<script src="static/js/jquery-3.5.1.js"></script>
+<script src="static/js/popper.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script src="static/js/main.js"></script>
+<script type="text/javascript">
+    var frm = $('#selection');
+    frm.submit(function (e) {
+        e.preventDefault();
+
+        $.ajax({
+            type: frm.attr('method'),
+            url: frm.attr('action'),
+            data: frm.serialize(),
+
+            success: function (data) {
+                document.getElementById("demo").innerHTML = data;
+                window.response = data;
+                heatmap = new google.maps.visualization.HeatmapLayer({
+                    data: getPoints(),
+                    map: map,
+                });
+                console.log('Submission was successful.');
+                console.log(data);
+            },
+            error: function (data) {
+                alert("wrong");
+                console.log('An error occurred.');
+                console.log(data);
+            },
+        });
+
+    });
+    // function callbackFunc(res) {
+
+    //       }
+    // function sendCriteria(url, callbackFunc) {
+    // var xhttp = new XMLHttpRequest();
+    // xhttp.onreadystatechange = function() {
+    //   if (this.readyState == 4 && this.status == 200) {
+    //     callbackFunc()
+    //   }
+    // };
+
+    // $.ajax({
+    //   type: "post",
+    //   method: 'post',
+    //   url: url,
+    //   success: function(res) {
+    //     callbackFunc(res);
+    //     return 'success';
+    //   }
+    // });
+
+
+
+</script>>
+</body>
+</html>

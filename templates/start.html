@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Heatmap</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/css/start.css">
+</head>
+<body>
+<div id="landing-header"><h1 class="display-4">All About Austin!</h1><a class="btn btn-lg btn-success" href="/">Start</a></div>
+<ul class="slideshow">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<form id="survey-form">
+    <div>
+<input id="slide2" type="range" min="1" max="100" step="1" value="10" onchange="updateSlider(this.value)" name="type1">
+ Value: <span id="type1"></span>
+</div>
+<div>
+<input id="slide" type="range" min="1" max="100" step="1" value="10" onchange="updateSlider1(this.value)" name="type2">
+ Value: <span id="type2"></span>
+</div>
+ <div>
+  <input id="slide3" type="range" min="1" max="100" step="1" value="10" onchange="updateSlider2(this.value)" name="type3">
+ Value: <span id="type3"></span>
+ </div>
+    <button type="button" class="btn btn-outline-primary btn-lg btn-block" data-dismiss="modal">OK</button>
+</form>
+
+<script>
+
+    function updateSlider(type1) {
+        let sliderDiv = document.getElementById("type1");
+        sliderDiv.innerHTML = type1;
+    }
+    function updateSlider1(type2) {
+        let sliderDiv = document.getElementById("type2");
+        sliderDiv.innerHTML = type2;
+    }
+    function updateSlider2(type3) {
+        let sliderDiv = document.getElementById("type3");
+        sliderDiv.innerHTML = type3;
+    }
+
+
+</script>
+</body>
+</html>

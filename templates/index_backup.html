@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Heatmaps</title>
+    <link
+      rel="stylesheet" type="text/css" href="{{ url_for('static',
+      filename='index.css') }}"/ >
+    <script type="text/javascript" src="{{
+  url_for('static', filename='js/main.js') }}"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtSafk_fwKKGG2eKGIt1W_d27Any8JzrQ&callback=initMap&libraries=visualization&v=weekly"
+      defer></script>
+  </head>
+  <body>
+    <div id="floating-panel">
+      <button onclick="toggleHeatmap()">Toggle Heatmap</button>
+      <button onclick="changeGradient()">Change gradient</button>
+      <button onclick="changeRadius()">Change radius</button>
+      <button onclick="changeOpacity()">Change opacity</button>
+    </div>
+
+    <div id="map"></div>
+  </body>
+</html>
