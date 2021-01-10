@@ -4,7 +4,7 @@
     <title>Heatmaps</title>
     <link
             rel="stylesheet" type="text/css" href="{{ url_for('static',
-            filename='css/index.css') }}"/ >
+            filename='css/index.css') }}">
     <script type="text/javascript" src="{{
             url_for('static', filename='js/index.js') }}"></script>
     <script
@@ -34,20 +34,20 @@
                             <fieldset>
                                 <legend>Find your home</legend>
                             </fieldset>
-
+                            <label>Preference</label>
                             <div>
                                 <input id="slide2" type="range" min="1" max="100" step="1" value="50" oninput="updateSlider(this.value)" name="type1">
-                                Value: <span id="type1"></span>
+                                Price: <span id="type1"></span>
                             </div>
                             <div>
                                 <input id="slide" type="range" min="1" max="100" step="1" value="50" oninput="updateSlider1(this.value)" name="type2">
-                                Value: <span id="type2"></span>
+                                Distance: <span id="type2"></span>
                             </div>
                             <div>
                                 <input id="slide3" type="range"  min="1" max="100" step="1" value="50" oninput="updateSlider2(this.value)" name="type3">
-                                Value: <span id="type3"></span>
+                                Usability: <span id="type3"></span>
                             </div>
-                            {#                                                    <button type="submit" class="btn btn-outline-primary" >OK</button>#}
+{#                            <button type="reset" class="btn btn-outline-primary" >Equal Focused</button>#}
 
                             <div class="inner-form">
                                 <div class="left">
