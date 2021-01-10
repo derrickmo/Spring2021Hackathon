@@ -1,58 +1,33 @@
-Project summary
-Please provide a short (one paragraph) summary of your project. Consider this your elevator pitch.
+Project Name: Next-Dream-Home
+
+Elevator Pitch:
+Dreaming a new home but don't know where to start? Feeling overwhelmed with dozens of websites but don't know which one to trust? Troubling with acronyms and industry jargons and worrying that you might miss some important details? Join the club and we all felt the same so we want to offer an improved solution! Using our property search tool, Next-Dream-Home, you will be able to find your dream properties using our bespoke design, a smart and tailored approach just for you. Whether you are looking for a price bargain that has good return potentials, an ideal location that close to your desired amenities, or functionalities that are suitable to your family needs, we have it all covered!  Fill up the information below to view your dream properties now.
+
+Project summary:
+Next-Dream-Home (Name TBD) is an interactive web application that helps users to identify for-sale properties given users' search criteria such as price ranges, city and county locations, living area requirements and their long-term growth needs. To facilitate better user experience, we created an easy-to-use webpage, allowing users to select their ideal attributes by selecting items from the drop-down boxes. Once the submit button is pressed, the app, written in JavaScript, will send users' inputs to the back-end, written in Python, which pulls dynamic data via HTTP API calls from a third party data provider and returns our ranked score back to the web application and leverages Google Map API to enhance the aesthetics. Since we have very limited control on data quality that our API provides, we managed to build an error preventing yet simple filtering system to only process available information. To optimize running efficiency and avoid redundant calculations, we utilize the skillsets we developed in data structure and algorithms courses. For example, we chose to avoid HashMap and mimicked the argsort in our score sorting methodology to achieve speed and space efficiency. There are more items that we want to add to this tool such as log-in, even smarter finders, send to your inbox feature and notifications ,etc but that can only be done after the hackathon due to our time constraints.
 
 Include the link to your Devpost project page here: Devpost
+Will be provided.
 
 Authors
 Yunyang Li - Devpost ID – liyy@seas.upenn.edu – https://github.com/Clarklee2009
 Di Hu - Devpost ID – diihuu@seas.upenn.edu – https://github.com/diihuu
-Tzu-Hao Mo - Devpost ID – moderr@seas.upenn.edu – https://github.com/moderrick
+Tzu-Hao Mo - Devpost ID: moderrick – moderr@seas.upenn.edu – https://github.com/moderrick
 
-Usage
-This section walks a prospective user through the process of installing and running the project on their local machine. The more detailed and the more accurate, the better. User-friendly instructions will entice prospective users (including judges) to engage more deeply with your project, which could improve your hackathon score.
-
-Prerequisites
-What prerequisites must be installed in order to run your project, and how do you install them?
-
-Provide code samples in this fenced code block.
-Installation
-Give a step-by-step rundown of how to install your project.
-
-State step 1.
-
-Provide code samples in this fenced code block.
-State step 2.
-
-Provide code samples in this fenced code block.
-Etc.
-
-Deployment
-Give a step-by-step rundown of how to use your project. Including screenshots in this section can be highly effective for highlighting specific features of your project.
-
-State step 1.
-
-Provide code samples in this fenced code block.
-State step 2.
-
-Provide code samples in this fenced code block.
-Etc.
+Installation and Deployment
+Step 1: Download the file and put all files in the same directory
+Step 2: Install pip and please consult "requirements.txt" for details
+Step 3: Launch and try out different features we created on the web page
+Step 4: Play around with our score meters and see how score changes per your preference!
+Step 5: Let us know how you feel about our design and what we can improve on! This is that simple!
 
 Additional information
 Tools used
-Which frameworks, libraries, or other tools did you use to create your project?
+Languages: JavaScript, Python
+APIs: GoogleMap, RapidAPI
 
-Tool 1 - Description (e.g. "Web framework used")
-Tool 2 - Description
-Tool 3 - Description
-Acknowledgments
 Use anyone else's code? Inspired by a particular project? List / link here.
+No. We wrote every single line of codes ourselves!
 
-Item 1
-Item 2
-Item 3
 License
-If desired, add a section for your license. Reference sites like https://choosealicense.com can help you choose which license meets your needs.
-
-For example:
-
-This package is licensed under the GNU General Public License v3.0 (GPL-3).
+N/A
