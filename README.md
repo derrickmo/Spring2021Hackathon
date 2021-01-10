@@ -1,4 +1,3 @@
-Overview
 Project summary
 Please provide a short (one paragraph) summary of your project. Consider this your elevator pitch.
 
