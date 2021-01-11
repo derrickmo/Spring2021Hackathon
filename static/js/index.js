@@ -71,11 +71,15 @@ function getPoints() {
         v_limit_min = Math.min(v_limit_min, lgt);
         v_limit_max = Math.max(v_limit_max, lgt);
         let lgt_icon = Number(location[1]) + 0.000001;
+
+        const infowindow = new google.maps.InfoWindow();
+        const infowindowContent = document.getElementById("infowindow-content");
+
         let marker = new google.maps.Marker({
             position:  { lat: ltt_icon, lng: lgt_icon},
             map,
             // icon: icon,
-            title: window.response[x].toString(),
+            title: "Score: " +window.response[x].toString(),
     });
         marker.addListener("click", () => {
           map.setZoom(13);
