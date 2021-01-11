@@ -14,17 +14,36 @@ Yunyang Li - Devpost ID – liyy@seas.upenn.edu – https://github.com/Clarklee2
 Di Hu - Devpost ID – diihuu@seas.upenn.edu – https://github.com/diihuu
 Tzu-Hao Mo - Devpost ID: moderrick – moderr@seas.upenn.edu – https://github.com/moderrick
 
+Requirements:
+certifi==2020.12.5
+chardet==4.0.0
+click==7.1.2
+Flask==1.1.2
+idna==2.10
+itsdangerous==1.1.0
+Jinja2==2.11.2
+MarkupSafe==1.1.1
+requests==2.25.1
+urllib3==1.26.2
+Werkzeug==1.0.1
+
+
 Installation and Deployment
-Step 1: Download the file and put all files in the same directory
-Step 2: Install pip and please consult "requirements.txt" for details
-Step 3: Launch and try out different features we created on the web page
+Step 1: Download the file and put all files in the same directory.
+Step 2: Install pip and please consult "requirements.txt" for details (https://pip.pypa.io/en/stable/installing/) or simply type "curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py" in your console.
+Step 3: Launch and try out different features we created on the web page.
 Step 4: Play around with our score meters and see how score changes per your preference!
 Step 5: Let us know how you feel about our design and what we can improve on! This is that simple!
 
+
+
 Additional information
-Tools used
-Languages: JavaScript, Python
-APIs: GoogleMap, RapidAPI
+Tools used:
+
+Google Map: GoogleMapsAPI
+PropertyData: Rapid API
+Back-end: Python (Flask)
+Front-end: Html, JavaScript, Jquery, CSS
 
 Use anyone else's code? Inspired by a particular project? List / link here.
 No. We wrote every single line of codes ourselves!

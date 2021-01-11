@@ -13,6 +13,7 @@ function initMap() {
     map: map,
   });
   heatmap.set("radius", heatmap.get("radius") ? null : 20);
+
 }
 
 function toggleHeatmap() {
@@ -92,3 +93,4 @@ function getPoints() {
 
   return heappoints;
 }
+
