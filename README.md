@@ -29,16 +29,21 @@ Werkzeug==1.0.1
 
 
 Installation and Deployment
-Step 1: Download the file and put all files in the same directory
-Step 2: Install pip and please consult "requirements.txt" for details
-Step 3: Launch and try out different features we created on the web page
+Step 1: Download the file and put all files in the same directory.
+Step 2: Install pip and please consult "requirements.txt" for details (https://pip.pypa.io/en/stable/installing/) or simply type "curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py" in your console.
+Step 3: Launch and try out different features we created on the web page.
 Step 4: Play around with our score meters and see how score changes per your preference!
 Step 5: Let us know how you feel about our design and what we can improve on! This is that simple!
 
+
+
 Additional information
-Tools used
-Languages: JavaScript, Python
-APIs: GoogleMap, RapidAPI
+Tools used:
+
+Google Map: GoogleMapsAPI
+PropertyData: Rapid API
+Back-end: Python (Flask)
+Front-end: Html, JavaScript, Jquery, CSS
 
 Use anyone else's code? Inspired by a particular project? List / link here.
 No. We wrote every single line of codes ourselves!
