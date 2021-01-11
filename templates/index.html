@@ -14,112 +14,6 @@
     <script
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtSafk_fwKKGG2eKGIt1W_d27Any8JzrQ&callback=initMap&libraries=visualization,geometry,places&v=weekly"
             defer></script>
-<<<<<<< HEAD
-        <script type='text/javascript' >
-            window.response;
-        </script>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="static/css/style.css">
-    </head>
-    <body>
-        <div class="wrapper d-flex align-items-stretch">
-            <nav id="sidebar">
-                <div class="p-4 pt-5">
-                    <a href="#" class="img logo mb-5" style="background-image: url(static/css/Images/logo1.png);"></a>
-                    <ul class="list-unstyled components mb-5">
-                        <li class="active">
-                            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Search</a>
-                            <ul class="collapse list-unstyled" id="homeSubmenu">
-                                <form id="selection" action="{{ url_for('handle_data') }}" method="POST">
-                                    <fieldset>
-                                        <legend>Find your home</legend>
-                                    </fieldset>
-                                    <label>Preference</label>
-                                    <div>
-                                        <input id="slide2" type="range" min="1" max="100" step="1" value="50" oninput="updateSlider(this.value)" name="type1">
-                                        Price: <span id="type1"></span>
-                                    </div>
-                                    <div>
-                                        <input id="slide" type="range" min="1" max="100" step="1" value="50" oninput="updateSlider1(this.value)" name="type2">
-                                        Distance: <span id="type2"></span>
-                                    </div>
-                                    <div>
-                                        <input id="slide3" type="range"  min="1" max="100" step="1" value="50" oninput="updateSlider2(this.value)" name="type3">
-                                        Usability: <span id="type3"></span>
-                                    </div>
-                                    <div class="inner-form">
-                                        <div class="left">
-                                            <div class="input-wrap first">
-                                                <div class="input-field first">
-                                                    <label>State</label>
-                                                    <div class="input-select">
-                                                        <select onchange="set_state(this.value)" size="1" name="state">
-                                                          <option value="" selected="selected">SELECT STATE</option>
-                                                          <option value="AL">Alabama (AL)</option>
-                                                          <option value="AK">Alaska (AK)</option>
-                                                          <option value="AZ">Arizona (AZ)</option>
-                                                          <option value="AR">Arkansas (AR)</option>
-                                                          <option value="CA">California (CA)</option>
-                                                          <option value="CO">Colorado (CO)</option>
-                                                          <option value="CT">Connecticut (CT)</option>
-                                                          <option value="DE">Delaware (DE)</option>
-                                                          <option value="DC">District Of Columbia (DC)</option>
-                                                          <option value="FL">Florida (FL)</option>
-                                                          <option value="GA">Georgia (GA)</option>
-                                                          <option value="HI">Hawaii (HI)</option>
-                                                          <option value="ID">Idaho (ID)</option>
-                                                          <option value="IL">Illinois (IL)</option>
-                                                          <option value="IN">Indiana (IN)</option>
-                                                          <option value="IA">Iowa (IA)</option>
-                                                          <option value="KS">Kansas (KS)</option>
-                                                          <option value="KY">Kentucky (KY)</option>
-                                                          <option value="LA">Louisiana (LA)</option>
-                                                          <option value="ME">Maine (ME)</option>
-                                                          <option value="MD">Maryland (MD)</option>
-                                                          <option value="MA">Massachusetts (MA)</option>
-                                                          <option value="MI">Michigan (MI)</option>
-                                                          <option value="MN">Minnesota (MN)</option>
-                                                          <option value="MS">Mississippi (MS)</option>
-                                                          <option value="MO">Missouri (MO)</option>
-                                                          <option value="MT">Montana (MT)</option>
-                                                          <option value="NE">Nebraska (NE)</option>
-                                                          <option value="NV">Nevada (NV)</option>
-                                                          <option value="NH">New Hampshire (NH)</option>
-                                                          <option value="NJ">New Jersey (NJ)</option>
-                                                          <option value="NM">New Mexico (NM)</option>
-                                                          <option value="NY">New York (NY)</option>
-                                                          <option value="NC">North Carolina (NC)</option>
-                                                          <option value="ND">North Dakota (ND)</option>
-                                                          <option value="OH">Ohio (OH)</option>
-                                                          <option value="OK">Oklahoma (OK)</option>
-                                                          <option value="OR">Oregon (OR)</option>
-                                                          <option value="PA">Pennsylvania (PA)</option>
-                                                          <option value="RI">Rhode Island (RI)</option>
-                                                          <option value="SC">South Carolina (SC)</option>
-                                                          <option value="SD">South Dakota (SD)</option>
-                                                          <option value="TN">Tennessee (TN)</option>
-                                                          <option value="TX">Texas (TX)</option>
-                                                          <option value="UT">Utah (UT)</option>
-                                                          <option value="VT">Vermont</option>
-                                                          <option value="VA">Virginia</option>
-                                                          <option value="WA">Washington</option>
-                                                          <option value="WV">West Virginia</option>
-                                                          <option value="WI">Wisconsin</option>
-                                                          <option value="WY">Wyoming</option>
-                                                        </select>
-                                                      </div>
-                                                        <label>City</label>
-                                                        <div class="input-select">
-                                                        <select name="city" id="city">
-                                                        <option value="" selected="selected">SELECT CITY</option>
-                                                        </select>
-
-                                                    </div>
-                                                </div>
-=======
     <script type='text/javascript' >
         window.response;
     </script>
@@ -215,7 +109,6 @@
                                                     <option value="WI">Wisconsin</option>
                                                     <option value="WY">Wyoming</option>
                                                 </select>
->>>>>>> 2d1db5f625f583e680224c604428501a0777eb0b
                                             </div>
                                             <label>City</label>
                                             <div class="input-select">
@@ -274,19 +167,6 @@
                 </p>
             </div>
         </div>
-<<<<<<< HEAD
-        <div id="infowindow-content">
-          <span id="place-name" class="title"></span><br />
-          <strong>Place ID</strong>: <span id="place-id"></span><br />
-          <span id="place-address"></span>
-        </div>
-        <script src="static/js/jquery-3.5.1.js"></script>
-        <script src="static/js/popper.js"></script>
-        <script src="static/js/bootstrap.min.js"></script>
-        <script src="static/js/main.js"></script>
-        <script type="text/javascript">
-=======
->>>>>>> 2d1db5f625f583e680224c604428501a0777eb0b
 
     </nav>
     <!-- Page Content  -->
