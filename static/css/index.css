@@ -35,3 +35,18 @@ body {
   top: 10px;
   z-index: 5;
 }
+#selection > div.inner-form > button{
+  margin-top: 20px;
+
+}
+#myModal > div > div > div.modal-body > p {
+  color: black
+}
+
+#sidebar > div > ul > li:nth-child(2) > button{
+  color: #f8b739;
+  margin-left: 0;
+  padding-left: 0;
+  border: none;
+  background: none;
+}
